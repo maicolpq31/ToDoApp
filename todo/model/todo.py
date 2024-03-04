@@ -12,7 +12,7 @@ class Todo:
 
 
     def add_tag(self, tag: str):
-        if self.tag is not in self.tags:
+        if self.tag not in self.tags:
             self.tags.append[tag]
 
 
@@ -23,6 +23,10 @@ class Todo:
 
 
 class TodoBook:
-    pass
+    def __init__(self, todos: = dict[]):
+        self.todos = dict[int]
+
+
+    def add_todo(self, title: str):
 
 
