@@ -16,17 +16,10 @@ class Todo:
             self.tags.append[tag]
 
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f"code_ide {self.code_id}, title {self.title}"
 
 
-
-
 class TodoBook:
-    def __init__(self, todos: = dict[]):
-        self.todos = dict[int]
-
-
-    def add_todo(self, title: str):
-
-
+    def __init__(self, todos = {}):
+        self.todos = {}
