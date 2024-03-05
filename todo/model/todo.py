@@ -8,11 +8,11 @@ class Todo:
 
 
     def mark_completed(self):
-        self.completed = True    #preguntar pistas de tipos
+        self.completed = True
 
 
     def add_tag(self, tag: str):
-        if tag not in self.tags:  #porque al tag no se le pone self?
+        if tag not in self.tags:
             self.tags.append(tag)
 
 
@@ -27,21 +27,32 @@ class TodoBook:
 
     def add_todo(self, title: str, description: str) -> int:
         G_id = len(self.todos.values()) + 1         #?
-        objeto = Todo(123,"title","description")
-        self.todos[G_id] = objeto
+        objeto = Todo(G_id,title,description)
+        self.todos[G_id] = objeto  #tod["key"] = se le asigna a un objeto
         return G_id
 
    #7
     def pending_todos(self):
-        retorn[todos for todo in todos.values()]
-
+        return[todos for todo in self.todos.values() if todo.completed == False]
+        """"#return [todos for x in self.todos.values() if x.completed == False]"""
 
     def completed_todos(self):
-        pass
+        return[todos for todo in self.todos.values() if todo.completed == True]
 
 
     def tags_todo_count(self):
-        self.
+        tags = []
+        for todo in self.todos.values():
+            for tag in todo.tags:
+                if tag not in tags:
+                    tags.append(tag)
+
+todo_book = TodoBook()
+todo_book.add_todo("hola", "description")
+todo_book.add_todo("oe", "description")
+tarea = todo_book.todos[2]
+tarea.add_tag('mat')
+print(todo_book.todos[2].tags)
 
 
 
