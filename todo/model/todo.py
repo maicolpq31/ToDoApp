@@ -12,8 +12,8 @@ class Todo:
 
 
     def add_tag(self, tag: str):
-        if self.tag not in self.tags:
-            self.tags.append[tag]
+        if tag not in self.tags:
+            self.tags.append(tag)
 
 
     def __str__(self):
@@ -21,5 +21,19 @@ class Todo:
 
 
 class TodoBook:
-    def __init__(self, todos = {}):
-        self.todos = {}
+    def __init__(self):
+        self.todos: dict[int,Todo] = {}
+
+
+    def add_todo(self,title: str, description: str) -> int:
+        generar_id = len(self.todos) + 1
+        objeto = Todo("107416", "renabado", description)
+        self.todos[generar_id] = objeto
+        return generar_id
+
+
+    def pending_todos(self):
+        return [todos for todo in self.todos.values() if not todo.completed]
+
+
+
