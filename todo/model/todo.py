@@ -33,8 +33,9 @@ class TodoBook:
 
    #7
     def pending_todos(self):
+        #      output       collection                  condition
         return[todos for todo in self.todos.values() if todo.completed == False]
-        """"#return [todos for x in self.todos.values() if x.completed == False]"""
+        #return [todos for x in self.todos.values() if x.completed == False]  la variable iteradora es x
 
     def completed_todos(self):
         return[todos for todo in self.todos.values() if todo.completed == True]
@@ -50,8 +51,10 @@ class TodoBook:
 todo_book = TodoBook()
 todo_book.add_todo("hola", "description")
 todo_book.add_todo("oe", "description")
+print(todo_book.todos[2])
+
 tarea = todo_book.todos[2]
-tarea.add_tag('mat')
+tarea.add_tag("matematicas")
 print(todo_book.todos[2].tags)
 
 
