@@ -3,45 +3,51 @@ class Todo:
         self.code_id: int = code_id
         self.title: str = title
         self.description: str = description
-        self.completed: bool =  False
+        self.completed: bool = False
         self.tags: list[str] = []
 
 
-    def mark_completed(self) -> bool:
-        self.completed = True
+    def mark_completed(self):
+        self.completed = True    #preguntar pistas de tipos
 
 
     def add_tag(self, tag: str):
-        if tag not in self.tags:
+        if tag not in self.tags:  #porque al tag no se le pone self?
             self.tags.append(tag)
 
 
     def __str__(self):
-        return f"code_ide {self.code_id}, title {self.title}"
+        return f"{self.code_id} - {self.title}"
 
 
 class TodoBook:
-    def __init__(self):
-        self.todos: dict[int,Todo] = {}
+    def __init__(self, todos: dict[int, Todo] = {}):
+        self.todos: dict[int, Todo] = {}
 
 
-    def add_todo(self,title: str, description: str) -> int:
-        generar_id = len(self.todos) + 1
-        objeto = Todo("107416", "renabado", description)
-        self.todos[generar_id] = objeto
-        return generar_id
+    def add_todo(self, title: str, description: str) -> int:
+        G_id = len(self.todos.values()) + 1         #?
+        objeto = Todo(123,"title","description")
+        self.todos[G_id] = objeto
+        return G_id
 
-
+   #7
     def pending_todos(self):
-        return [todos for todo in self.todos.values() if not todo.completed]
+        retorn[todos for todo in todos.values()]
 
-    def tags_todo_count(self) -> dict[str, int]:
-        tag_count: Dict[str, int] = {}
-        for todo in self.todos.values():
-            for tag in todo.tags:
-                if tag in tag_count:
-                    tag_count[tag] += 1
-                else:
-                    tag_count[tag] = 1
-        return tag_count
+
+    def completed_todos(self):
+        pass
+
+
+    def tags_todo_count(self):
+        self.
+
+
+
+
+
+
+
+
 
